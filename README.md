@@ -1,1 +1,1 @@
-# Spring-Boot-KBTU
+# SpringFrameworkKBTU
