@@ -1,0 +1,74 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" class="js-focus-visible" data-js-focus-visible=""><head>
+    <title>List all Plants</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style type="text/css">
+        @font-face {
+            font-weight: 400;
+            font-style:  normal;
+            font-family: 'Circular-Loom';
+
+            src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Book-cd7d2bcec649b1243839a15d5eb8f0a3.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-weight: 500;
+            font-style:  normal;
+            font-family: 'Circular-Loom';
+
+            src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Medium-d74eac43c78bd5852478998ce63dceb3.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-weight: 700;
+            font-style:  normal;
+            font-family: 'Circular-Loom';
+
+            src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Bold-83b8ceaf77f49c7cffa44107561909e4.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-weight: 900;
+            font-style:  normal;
+            font-family: 'Circular-Loom';
+
+            src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Black-bf067ecb8aa777ceb6df7d72226febca.woff2') format('woff2');
+        }</style></head>
+<body data-new-gr-c-s-check-loaded="14.1047.0" data-gr-ext-installed=""><div data-v-32478853="" class="odm_extension image_downloader_wrapper"><!----></div>
+
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">List of Plants</div>
+        <div class="panel-body">
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="plant : ${plants}">
+                    <td th:text="${plant.name}"></td>
+                    <td th:text="${plant.description}"></td>
+                    <td th:text="${plant.price}"></td>
+                    <td>
+                        <form style="float:left; padding:5px; height:0px" th:method="get" th:action="@{'/plants/'+${plant.id}}"><button class="btn btn-default btn-xs" type="submit"><span class="glyphicon glyphicon-search"></span></button></form>
+                        <form style="float:left; padding:5px; height:0px" th:method="get" th:action="@{'/plants/'+${plant.id}+'/form'}"><button class="btn btn-default btn-xs" type="submit"><span class="glyphicon glyphicon-pencil"></span></button></form>
+                        <form style="float:left; padding:5px; height:0px" th:method="delete" th:action="@{'/plants/'+${plant.id}}"><button class="btn btn-default btn-xs" type="submit"><span class="glyphicon glyphicon-trash"></span></button></form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <a class="btn btn-default" th:href="@{/plants/form}">Add a new plant</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<div class="betternet-wrapper"></div></body><div class="XTranslate"></div><loom-container id="lo-engage-ext-container"><loom-shadow classname="resolved"></loom-shadow></loom-container><loom-container id="lo-companion-container"><loom-shadow classname="resolved"></loom-shadow></loom-container><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
